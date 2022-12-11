@@ -9,6 +9,7 @@ import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductFilterPipe } from './product/product-filter.pipe';
+import { AlertifyService } from './services/alertify.service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { ProductFilterPipe } from './product/product-filter.pipe';
     AppRoutingModule,
     NgbModule
   ],
-  providers: [],
+  providers: [AlertifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

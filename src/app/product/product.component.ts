@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from './product';
-declare let alertify: any;
+import { AlertifyService } from '../services/alertify.service';
 
 @Component({
   selector: 'app-product',
@@ -16,12 +16,11 @@ export class ProductComponent {
     { id: 2, name: "Mouse", price: 25, categoryid: 2, description: "Logitech Pebble", imageUrl: "https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1028&q=80" },
   ]
 
-  constructor() {
+  constructor(private alertifyService:AlertifyService) {
 
   }
 
-  addtoCard(product: Product) {
-    alertify.success(product.name + " Added.");
+  addtoCard(product:any){
+    this.alertifyService.success(product.name+" eklendi.");
   }
-
 }
